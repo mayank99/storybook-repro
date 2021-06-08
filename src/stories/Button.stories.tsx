@@ -9,29 +9,37 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    docs: { inlineStories: false } // toggle this line and refresh storybook
+  },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const Basic: Story<ButtonProps> = (args: ButtonProps) => {
+  return (
+    <Button {...args}>
+      Basic button
+    </Button>
+  );
 };
+Basic.args = {
+  children: 'Basic button'
+}
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const Italic: Story<ButtonProps> = (args: ButtonProps) => {
+  return (
+    <Button {...args}>
+      <span style={{ fontStyle: 'italic'}}>Italic label</span>
+    </Button>
+  );
 };
+Italic.argTypes = {
+  children: { control: { disable: true } }
+}
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Dropdown: Story<ButtonProps> = (args: ButtonProps) => {
+  return (
+    <Button {...args}>
+      {'Dropdown \u25be'}
+    </Button>
+  );
 };
