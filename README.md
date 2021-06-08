@@ -1,7 +1,21 @@
+Minimal repo for reproducing [storybookjs/storybook#15143](https://github.com/storybookjs/storybook/issues/15143).
+
+### Steps to run
+
+1. Clone and run `yarn`
+2. Run `yarn storybook`
+3. Navigate to Docs tab to see broken stories
+
+Then toggle [line 13](https://github.com/mayank99/storybook-repro/blob/main/src/stories/Button.stories.tsx#L13) in Button.stories.tsx and refresh browser.
+
+---
+
+<!-- original readme from cra -->
+
+#### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 <details>
 <summary>Getting Started with Create React App</summary>
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
